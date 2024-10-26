@@ -16,11 +16,10 @@ def insert(root, key):
     return root
 
 
-def find_min_value(node):
-    current = node
-    while current.left is not None:
-        current = current.left
-    return current.val
+def sum_of_values(node):
+    if node is None:
+        return 0
+    return node.val + sum_of_values(node.left) + sum_of_values(node.right)
 
 
 root = TreeNode(20)
@@ -31,5 +30,5 @@ root = insert(root, 12)
 root = insert(root, 10)
 root = insert(root, 14)
 
-min_value = find_min_value(root)
-print(f"Найбільше значення у дереві: {min_value}")
+sum_value = sum_of_values(root)
+print(f"Найбільше значення у дереві: {sum_value}")
