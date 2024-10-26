@@ -16,10 +16,10 @@ def insert(root, key):
     return root
 
 
-def find_max_value(node):
+def find_min_value(node):
     current = node
-    while current.right is not None:
-        current = current.right
+    while current.left is not None:
+        current = current.left
     return current.val
 
 
@@ -31,5 +31,5 @@ root = insert(root, 12)
 root = insert(root, 10)
 root = insert(root, 14)
 
-max_value = find_max_value(root)
+max_value = find_min_value(root)
 print(f"Найбільше значення у дереві: {max_value}")
